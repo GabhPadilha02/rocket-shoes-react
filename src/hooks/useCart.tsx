@@ -57,7 +57,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const currentAmount = productExists ? productExists.amount : 0;
       const amount = currentAmount + 1;
       if (amount > stockAmount) {
-        toast.error("Quantidade selecionada fora de estoque");
+        toast.error('Quantidade solicitada fora de estoque');
         return;
       }
       if (productExists) {
@@ -109,6 +109,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       if(amount > stockAmount){
         toast.error('Quantidade solicitada fora de estoque');
+        return
       }
 
       const updatedCart = [...cart];
